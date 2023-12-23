@@ -1,0 +1,28 @@
+Criar variável de ambiente no Windows
+
+AIRFLOW_WIN = c:\airflow-win
+
+No VSCode abrir a pasta c:\airflow-win
+Abrir terminal
+No PS fazer o git clone:
+git clone https://github.com/danilosousadba/airflow.git
+
+Editar o docker-compose.yml
+
+Alterar linhas de 53 a 56 deixando assim:
+    - ${AIRFLOW_WIN:-${TEMP}}/dags:/opt/airflow/dags
+    - ${AIRFLOW_WIN:-${TEMP}}/logs:/opt/airflow/logs
+    - ${AIRFLOW_WIN:-${TEMP}}/plugins:/opt/airflow/p
+    - ${AIRFLOW_WIN:-${TEMP}}/data:/opt/airflow/data
+
+Salvar
+
+No terminal criar pastas:
+mkdir dags
+mkdir logs
+mkdir plugins
+mkdir data
+
+No terminal executar o docker-compose:
+docker-compose up -d
+

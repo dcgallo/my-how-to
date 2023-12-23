@@ -1,0 +1,54 @@
+hop-server.bat
+No hop-gui:
+Cria Hop Server
+- Nome hop-server
+- IP
+- Porta
+
+Criar um Execution Information Location remoto:
+- Nome: execution-information-location-remoto
+- Location type: Remote location
+- Hop server: hop-server
+- Execution information Location: execution-information-location-local
+
+Criar um Execution Information Location local:
+- Nome: execution-information-location-local
+- Location type: File location
+- Root folder: <pasta "metadata" da rede>
+
+Criar Pipeline Run Configuration
+Local:
+- New pipeline
+- Nome: pipeline-run-hop-local
+- Execution information location: execution-information-location-local
+- Engine type: Hop local pipeline engine
+- Hop server: hop-server
+- Run Configuration: hop-local (tem que criar um Pipeline Run Configuration com o nome hop-local)
+Salvar
+
+Remoto:
+- New pipeline
+- Nome: pipeline-run-hop-remoto
+- Execution information location: execution-information-location-remoto
+- Engine type: Hop remote pipeline engine
+- Hop server: hop-server
+- Run Configuration: hop-local (tem que criar um Pipeline Run Configuration com o nome hop-local)
+Salvar
+
+Criar Workflow Run Configuration
+Local:
+- New pipeline
+- Nome: workflow-run-hop-local
+- Execution information location: execution-information-location-local
+- Workflow engine type: Hop local workflow engine
+Salvar
+
+Remoto:
+- New pipeline
+- Nome: workflow-run-hop-remoto
+- Engine type: Hop remote pipeline engine
+- Hop server: hop-server
+- Run Configuration: workflow-run-hop-local
+Salvar
+
+

@@ -1,0 +1,20 @@
+Instalar WSL2
+
+Docker
+
+Fazer download e install no Windows
+
+Airflow
+
+Download do git danilosousadba/airflow
+No wsl criar diretórios com o comando "mkdir /opt /airflow /dags /logs /plugins /data"
+Dar permissão as pastas com o comando "chmod -R 777 /opt /airflow /dags /logs /plugins /data"
+Ir para o diretório /airflow "cd /airflow" (deve haver um arquivo docker-compose.yaml")
+Executar o Docker-compose "sudo docker-compose up -d"
+Testar o Airflow "localhost:8080"
+
+Alterar porta do Airflow: O arquivo docker-compose.yaml pode ser editado para por exemplo alterar a porta do Airflow.
+Para o serviço Airflow: Ir no diretório do Airflow onde está o docker-compose.yaml e executar "sudo docker compose down"
+Subir o serviço Airflow: "sudo docker-compose up -d" (novamente)
+
+

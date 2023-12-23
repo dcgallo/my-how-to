@@ -1,0 +1,5 @@
+# short-lived container
+docker run -it --rm --env HOP_LOG_LEVEL=Basic --env HOP_FILE_PATH='${PROJECT_HOME}/teste/wf_teste.hwf' --env HOP_PROJECT_FOLDER=/files --env HOP_PROJECT_NAME=teste --env HOP_ENVIRONMENT_NAME=teste-dev --env HOP_ENVIRONMENT_CONFIG_FILE_NAME_PATHS=/files/config/dev-config.json --env HOP_RUN_CONFIG=local --env HOP_RUN_PARAMETERS=PARAM_LOG_MESSAGE=Hello,PARAM_WAIT_FOR_X_MINUTES=1 -v /path/to/local/dir:/files --name hop-container apache/hop
+
+# long-lived container on Power Shell em background
+Start-Job {docker run -p 8081:8081 -p 8079:8079 -e HOP_SERVER_PORT=8081 -e HOP_SERVER_SHUTDOWNPORT=8079 -e HOP_SERVER_USER=admin -e HOP_SERVER_PASS=admin --name hop-container apache/hop}

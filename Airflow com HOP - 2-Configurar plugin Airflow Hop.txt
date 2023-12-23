@@ -1,0 +1,8 @@
+Configurar plugin Airflow Hop
+
+$ pip3 install BeautifulSoup4==4.11.1
+
+$ pip3 install airflow-hop-plugin==0.1.0b2
+
+$ pip install airflow-hop-plugin
+

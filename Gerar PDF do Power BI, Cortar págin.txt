@@ -1,0 +1,10 @@
+Gerar PDF do Power BI, Cortar páginas e enviar por e-mail
+
+Gerar PDF do Power BI
+https://youtu.be/wwmrUF4AeCI?si=vtzw1KfBGJhHYkVO
+
+Cortar páginas do PDF:
+https://youtu.be/JO7xxPKmeTs?si=b0h0UBdcJn_Hmdre
+
+Enviar e-mail de cada PDF para um usuário:
+https://youtu.be/yLOw2T8-NzA?si=zJew_pbAwNebRew0

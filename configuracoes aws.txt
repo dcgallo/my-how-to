@@ -1,0 +1,25 @@
+BPO
+
+Gmail
+E-Mail: bpo.bestdata@gmail.com
+Senha: Bpobd#1971.
+
+AWS
+E-Mail: bpo.bestdata@gmail.com
+Username: bpo.bestdata
+Senha: Bpobd#1971.
+Conta: 949408455329
+
+IAM
+User: admin
+Senha: Bpoad#1971.
+
+EC2
+windows-bpo-bestdata
+key-windows-bpo-bestdata
+RDP User: Administrator
+RDP Senha: Win-Adm#1971.
+
+GIT
+User: git-bpo-bestdata
+Password: Gitbpo#1971.

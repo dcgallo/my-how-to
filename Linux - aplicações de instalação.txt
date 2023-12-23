@@ -1,0 +1,27 @@
+O que são:
+pip - vem com o python
+- pip freeze - mostra bibliotecas instaladas
+- pip freeze > requirements.txt (usado para instalar todas as dependencias)
+- pip install -r requirements.txt
+
+pyenv - instala do git
+- pyenv versions
+- pyenv local <versão>
+- python -m venv .venv -- permite instalar bibliotecas apenas no ambiente .venv
+- . ./.venv/bin/activate -- ativa o uso do ambiente .venv
+
+npm - é o instalador (pip) do node.js
+
+apt-get - é o instalador (pip) do debian (ubuntu)
+- apt-get install
+- apt-get remove
+
+sudo - permite execução de tarefas de administrador temporariamente
+- se não pedir senha é pq no /etc o arquivo sudoers (para editar usa sudo visudo - edita e reseta) está configurado para permitir
+- no /etc tem o arquivos group (grupos de usuários) e passwd (usuarios)
+
+curl - serve para chamada http -> Curl no Power Shell - Invoke-WebRequest -Uri https://www.google.com
+wget - igual curl
+
+https://yaml.org/spec/1.2.2/
+

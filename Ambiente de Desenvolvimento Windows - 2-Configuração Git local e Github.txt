@@ -1,0 +1,92 @@
+Github - versionamento
+
+Pré-requisito:
+WSL (SO Linux) ou Power Shell (PS)
+Git instalado:
+
+Instalação do Git:
+No prompt executar:
+- sudo apt-get update (atualiza a versão do apt-get)
+- sudo apt-get install git (instala o git)
+
+Todos os comandos abaixo são executados em prompt (WSL ou PS)
+
+Se não tem ainda uma chave de ssh criada no Git:
+- Rodar comando: git config --global user.name "<seu nome>"
+- Rodar comando: git config --global user.email <seu e-mail no github>
+- Configurar branch principal do git local como "main" - rode o comando: "git config --global init.defaultBranch main"
+- Ir no diretório .ssh do usuário:/home/<usuario>/.ssh - se não tiver o .ssh criar -> mkdir .ssh
+- Rodar comando: ssh-keygen -t ed25519 -C "<seu e-mail do github>"
+- Copiar resultado do comando acima ou o conteúdo do arquivo /home/<usuario>/.ssh/id_ed25519.pub: 
+  Exemplo do conteúdo do arquivo id_ed25519.pub: 
+    ssh-ed25519 KLJLijsdlkska983274kldsfhjsosaklvnvoisof9u3//ds887sfhhl\klkowiea\8q3 <seu e-mail no github>
+- No Github ir no seu perfil e em Settings
+- Clicar na opção SSH and GPG Keys 
+- Criar uma nova chave em "New SSH Keys" inserindo o nome e conteúdo do arquivo id_ed25519.pub
+
+Criar um repositório no Github:
+- No seu perfil do Github (github.com/<seu usuario> vá em "Repositories"
+- New
+- Informe o nome do repositório <repositorio-do-projeto> (sem espaços em branco)
+- Selecione a opção (Public ou Private)
+
+Criar repositorio Git local:
+- Vá ao diretório onde quer criar o seu projeto
+- criar pasta <local do projeto> -> mkdir <projeto>
+- git init
+- git remote add origin git@github.com:git-bpo/<repositorio-do-projeto>.git
+- git branch -M main (para garantir que a branch do Github seja a main e não a master)
+
+Adicionando novos arquivos no diretório ao repositório:
+- git add .
+- git commit -a -m "mensagem"
+- git push origin <branch>
+
+Atualizando diretório local com alterações no repositório:
+- git pull origin <branch>
+  
+Deletando arquivo local e no repositório:
+- git rm -r "arquivo" (-r usado se tiver subdiretório)
+- git commit -m "Mensagem opcional"
+- git push -u origin <branch>
+
+Criando uma nova branch:
+- git checkout -b <new-branch>
+- git add . (para atualizar (deletar, alterar ou criar) os arquivos do diretório local na nova branch)
+- git commit -m "Mensagem opcional" (para atualizar o git que tem novos arquivos na nova branch)
+- git push -u origin <new-branch> (para atualizar o Github com a nova branch)
+  
+Atualizando diretorio local em relação ao repositório remoto:
+- git pull --set-upstream origin <branch>
+
+Alternando entre branches:
+- git switch <branch>
+
+Voltando versão do repositório:
+- git log -> mostra as versões do repositório
+
+  Exemplo:
+  $ git log
+  commit c4331ca5f8fec909b18da51db4ad222be889b11b (HEAD -> main, origin/main)
+  Author: Danilo Gallo <dcgallo@gmail.com>
+  Date:   Tue Nov 28 14:53:12 2023 -0300
+
+      atualizando repositório
+
+  commit 6d2033b186d3a39a808d052c60fc085bb2eb5717
+  Author: Danilo Gallo <dcgallo@gmail.com>
+  Date:   Fri Nov 24 15:14:52 2023 -0300
+
+      first commit
+  gallo@DESKTOP-J6K7ASH:~/workshop-projeto-dados$ 
+
+Observação: antes de voltar uma versão pode criar uma nova branch para preservar a atual:
+- git switch -c <nova-branch> -> cria uma nova branch preservando os commit já efetuados
+
+Volta a versão do checkout
+- git checkout "<id do commit>" -> exemplo acima do 1º commit "6d2033b186d3a39a808d052c60fc085bb2eb5717"
+
+Quando clonar um repositório externo e quiser torna-lo seu e sincronizar com o seu Github, como o clone já vem com um diretório .git original é necessário alterar a url do git, para isso utilize o comando:
+
+$ git remote set-url --add origin <sua url do projeto no Github (ex: https://github.com/<seu usuário>/<nome do seu repositório>)
+

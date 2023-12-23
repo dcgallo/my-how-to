@@ -1,0 +1,31 @@
+Nível 1
+
+Criar domínio
+Criar Unidade de Negócio
+Criar usuários (adm + endusers)
+Criar temas:
+- Cor de fundo
+- Cor do texto
+- Logo 100 x 400
+Criar grupo de relatórios
+- Cores
+- Ícone de card
+Criar subgrupo de relatórios
+Cadastrar relatórios
+- Nome do relatório]
+- Conta PBI (Previamente configurada)
+  Pré-requisitos:
+  - Usuário/Senha Power BI Pro/Premium
+  - Client ID
+  - Client secret
+  - Diretorio ID
+- Workspace
+- Relatório (capa do relatório 267px x 150px)
+
+Nível 2
+
+Criar tema
+Criar grupo de usuários
+Dar permissão de usuários (por grupo ou usuário) em relatórios (por grupo, subgrupo ou relatório)
+Criar playlist (opcional por usuário)
+

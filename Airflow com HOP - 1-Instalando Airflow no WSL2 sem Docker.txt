@@ -1,0 +1,81 @@
+https://www.freecodecamp.org/news/install-apache-airflow-on-windows-without-docker/
+
+Executar no WSL2
+----------------
+$ python3 --version
+Python 3.10.12
+
+$ cd ~
+
+$ sudo pip install virtualenv
+[sudo] password for gallo:
+
+$ virtualenv airflow_env
+
+$ source airflow_env/bin/activate
+
+$ pwd
+/home/gallo/airflow
+
+$ ls -lia
+total 552
+  516 drwxr-xr-x 3 gallo gallo   4096 Oct 31 15:19 .
+  997 drwxr-x--- 7 gallo gallo   4096 Oct 31 15:15 ..
+58497 -rw------- 1 gallo gallo  67869 Oct 31 15:19 airflow.cfg
+58498 -rw-r--r-- 1 gallo gallo 479232 Oct 31 15:19 airflow.db
+  601 drwxr-xr-x 3 gallo gallo   4096 Oct 31 14:58 logs
+
+$ mkdir dags
+
+$ vi ~/.bashrc
+Incluir a linha abaixo:
+AIRFLOW_HOME=/c/Users/[YourUsername]/airflow
+Salvar e fechar - :wq!
+
+$ cd $AIRFLOW_HOME
+
+$ pip install apache-airflow 
+
+$ airflow db init 
+
+$ airflow users create -e dcgallo@bmail.com -f Danilo -l Gallo -p admin -r Admin -u Admin
+
+$ airflow users list
+id | username | email             | first_name | last_name | roles
+===+==========+===================+============+===========+======
+1  | Admin    | dcgallo@bmail.com | Danilo     | Gallo     | Admin
+
+
+$ airflow scheduler
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[2023-10-31T15:30:33.590-0300] {executor_loader.py:117} INFO - Loaded executor: SequentialExecutor
+[2023-10-31 15:30:33 -0300] [5530] [INFO] Starting gunicorn 21.2.0
+[2023-10-31 15:30:33 -0300] [5530] [INFO] Listening at: http://[::]:8793 (5530)
+[2023-10-31 15:30:33 -0300] [5530] [INFO] Using worker: sync
+[2023-10-31 15:30:33 -0300] [5531] [INFO] Booting worker with pid: 5531
+[2023-10-31T15:30:33.639-0300] {scheduler_job_runner.py:798} INFO - Starting the scheduler
+[2023-10-31T15:30:33.639-0300] {scheduler_job_runner.py:805} INFO - Processing each file at most -1 times
+[2023-10-31T15:30:33.646-0300] {manager.py:166} INFO - Launched DagFileProcessorManager with pid: 5532
+[2023-10-31T15:30:33.649-0300] {scheduler_job_runner.py:1598} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2023-10-31T15:30:33.653-0300] {settings.py:59} INFO - Configured default timezone Timezone('UTC')
+[2023-10-31T15:30:33.684-0300] {manager.py:410} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[2023-10-31 15:30:33 -0300] [5533] [INFO] Booting worker with pid: 5533
+
+Deixar janela do WSL2 aberta!
+
+
+Abrir outro WSL2:
+-----------------
+$ cd $AIRFLOW_HOME
+
+$ airflow webserver
+
+Se necessário alterar porta usar:
+$ airflow webserver -port <port number>
+
+Deixar a janela 2ª janela do WSL2 também aberta
+

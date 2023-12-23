@@ -1,0 +1,7 @@
+WSL2
+
+Executar o Power Shell no Windows
+Executar o comando "wsl --install"
+Reboot
+Executar WSL
+Definir usuário e senha

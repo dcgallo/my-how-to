@@ -1,0 +1,58 @@
+Instalar Apache Hop no Linux para rodar o Hop Server
+
+java -version
+
+Se não tiver o java instalar...
+
+sudo apt-get update -- atualizar o apt-ger
+sudo apt install maven -- instalar o maven para ver configurações do java
+
+sudo apt-get install openjdk-11-jre (tem que ser o Java 11 para o Hop 2.6.0)
+
+Verificar a variável JAVA_HOME:
+
+echo $JAVA_HOME
+
+mvn -v -- verificar o diretório de instalação do java
+
+Resultado:
+Apache Maven 3.6.3
+Maven home: /usr/share/maven
+==>> Java version: 11.0.20.1, vendor: Ubuntu, runtime: /usr/lib/jvm/java-11-openjdk-amd64
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "5.15.133.1-microsoft-standard-wsl2", arch: "amd64", family: "unix"
+
+Setar variável JAVA_HOME:
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+Editar arquivo .bashrc e inserir variável APACHE_HOP_HOME
+
+vi ~/.bashrc
+
+HOP_CONFIG_FOLDER=/home/gallo/hop/config
+
+
+source ~/.bashrc
+
+Fazer download do Apache Hop do site https://hop.apache.org/download/ pelo Windows e copiar para a pasta do Linux (não copiar arquivos já descompactados do Windows)
+
+Se não tiver instalado o wget instalar:
+
+sudo apt install wget
+
+Fazer o download usando o wget:
+
+wget <url) - Exemplo: https://www.apache.org/dyn/closer.cgi?filename=hop/2.6.0/apache-hop-client-2.6.0.zip&action=download
+
+Descompactar o arquivo do download:
+
+Se não tiver unzip instalar...
+
+sudo apt install zip unzip -y
+
+sudo unzip apache-hop-client-2.6.0.zip
+
+sudo ./hop-server.sh 127.0.0.1 8081
+
+
