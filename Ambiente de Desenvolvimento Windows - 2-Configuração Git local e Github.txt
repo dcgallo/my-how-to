@@ -19,7 +19,7 @@ Se não tem ainda uma chave de ssh criada no Git:
 - Rodar comando: ssh-keygen -t ed25519 -C "<seu e-mail do github>"
 - Copiar resultado do comando acima ou o conteúdo do arquivo /home/<usuario>/.ssh/id_ed25519.pub: 
   Exemplo do conteúdo do arquivo id_ed25519.pub: 
-    ssh-ed25519 KLJLijsdlkska983274kldsfhjsosaklvnvoisof9u3//ds887sfhhl\klkowiea\8q3 <seu e-mail no github>
+    ssh-ed25519 KLJLijsdlkska983274kldsfhjsosaklvnvoisoD36f9u3//ds887sfhhl\klkowiea\8q3 <seu e-mail no github>
 - No Github ir no seu perfil e em Settings
 - Clicar na opção SSH and GPG Keys 
 - Criar uma nova chave em "New SSH Keys" inserindo o nome e conteúdo do arquivo id_ed25519.pub
